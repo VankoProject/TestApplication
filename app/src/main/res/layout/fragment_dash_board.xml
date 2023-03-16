@@ -16,6 +16,8 @@
         android:layout_gravity="top"
         app:menu="@menu/toolbar" />
 
+    <include layout="@layout/part_result"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMoviesList"
         android:layout_width="wrap_content"

@@ -27,6 +27,8 @@
 
     </com.google.android.material.appbar.MaterialToolbar>
 
+    <include layout="@layout/part_result"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvFavorite"
         android:layout_width="match_parent"
