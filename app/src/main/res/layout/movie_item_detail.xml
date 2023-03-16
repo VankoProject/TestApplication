@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="14dp"
+    android:layout_marginVertical="12dp"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dark_blue">
+
+        <ImageView
+            android:id="@+id/article_image"
+            android:layout_width="84dp"
+            android:layout_height="120dp"
+            android:background="@drawable/shape_image"
+            android:scaleType="fitCenter"
+            android:src="@drawable/shape_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/article_info"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/article_image"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica_neue_cyr_medium"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                tools:text="Title" />
+
+            <TextView
+                android:id="@+id/tvReleaseDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/helvetica_neue_cyr_medium"
+                android:maxLines="1"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                tools:text="2022-12-12" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/icon_delete"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginEnd="6dp"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
