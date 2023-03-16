@@ -139,5 +139,7 @@
         android:text="@string/description"
         android:textColor="@color/white" />
 
+    <include layout="@layout/part_result"/>
+
 
 </LinearLayout>
