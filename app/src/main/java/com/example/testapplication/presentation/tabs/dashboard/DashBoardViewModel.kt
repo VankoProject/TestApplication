@@ -1,38 +1,36 @@
 package com.example.testapplication.presentation.tabs.dashboard
 
-import  android.content.Context
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.testapplication.data.MovieRepositoryImpl
 import com.example.testapplication.domain.MovieItem
+import com.example.testapplication.domain.usecases.DeleteMovieItemUseCase
 import com.example.testapplication.domain.usecases.GetPopularMoviesUsesCase
+import com.example.testapplication.domain.usecases.LoadDataUseCase
 import com.example.testapplication.domain.usecases.SaveMovieItemUseCase
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class DashBoardViewModel(context: Context) : ViewModel() {
+class DashBoardViewModel(
+    private val getPopularMoviesUsesCase: GetPopularMoviesUsesCase,
+    private val saveMovieItemUseCase: SaveMovieItemUseCase,
+    private val loadDataUseCase: LoadDataUseCase,
+    private val deleteMovieItemUseCase: DeleteMovieItemUseCase
+) : ViewModel() {
 
-    private val repository = MovieRepositoryImpl(context)
-    private val getPopularMoviesUsesCase = GetPopularMoviesUsesCase(repository)
-    private val saveMovieItemUseCase = SaveMovieItemUseCase(repository)
-
-    private var _movieListLD = MutableLiveData<List<MovieItem>>()
-    val movieListLD: LiveData<List<MovieItem>> = _movieListLD
-
-    fun getPopularMovies(): LiveData<List<MovieItem>> {
-        viewModelScope.launch(Dispatchers.Main) {
-            _movieListLD.postValue(getPopularMoviesUsesCase.execute())
+    init {
+        viewModelScope.launch {
+            loadDataUseCase.loadDataToDb()
         }
-        return movieListLD
     }
 
+    val movieListLD = getPopularMoviesUsesCase.execute()
 
     suspend fun saveToFavoriteList(movieItem: MovieItem) {
         saveMovieItemUseCase.execute(movieItem)
     }
 
+    suspend fun deleteFavoriteFilm(movieItem: MovieItem) {
+        deleteMovieItemUseCase.execute(movieItem)
+    }
 
 
 }

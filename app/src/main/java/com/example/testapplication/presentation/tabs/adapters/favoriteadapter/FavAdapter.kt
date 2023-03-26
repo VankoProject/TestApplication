@@ -10,6 +10,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.testapplication.R
 import com.example.testapplication.databinding.MovieItemDetailBinding
 import com.example.testapplication.domain.MovieItem
+import com.example.testapplication.presentation.setUpRating
 
 
 class FavAdapter(
@@ -22,7 +23,7 @@ class FavAdapter(
             R.id.icon_delete -> listener.onClickButtonDelete(movieItem)
             R.id.article_image -> listener.onCurrentMoviePosition(movieItem)
             R.id.tvName -> listener.onCurrentMoviePosition(movieItem)
-            R.id.tvReleaseDate -> listener.onCurrentMoviePosition(movieItem)
+            R.id.tvScore -> listener.onCurrentMoviePosition(movieItem)
         }
     }
 
@@ -34,7 +35,7 @@ class FavAdapter(
 
         binding.iconDelete.setOnClickListener(this)
         binding.tvName.setOnClickListener(this)
-        binding.tvReleaseDate.setOnClickListener(this)
+        binding.tvScore.setOnClickListener(this)
         binding.articleImage.setOnClickListener(this)
 
 
@@ -47,11 +48,12 @@ class FavAdapter(
         with(holder.binding){
             articleImage.tag = movieItem
             tvName.tag = movieItem
-            tvReleaseDate.tag = movieItem
+            tvScore.tag = movieItem
             iconDelete.tag = movieItem
 
             tvName.text = movieItem.title
-            tvReleaseDate.text = movieItem.releaseDate
+            tvScore.text = movieItem.voteAverage.toString()
+            ratingBar.rating = setUpRating(movieItem.voteAverage.toFloat())
             Glide.with(holder.binding.root.context)
                 .load(URL_POSTER + movieItem.posterPath)
                 .centerCrop()

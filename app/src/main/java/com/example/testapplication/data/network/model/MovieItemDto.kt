@@ -17,4 +17,5 @@ data class MovieItemDto(
     val title: String,
     @SerializedName("vote_average")
     val voteAverage: Double,
+    val isFavorite: Boolean = false
 )

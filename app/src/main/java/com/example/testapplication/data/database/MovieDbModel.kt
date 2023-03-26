@@ -17,5 +17,7 @@ data class MovieDbModel(
     val title: String,
     @ColumnInfo(name = "vote_average")
     val voteAverage: Double,
+    @ColumnInfo(name="is_favorite")
+    val isFavorite: Boolean
 
 )

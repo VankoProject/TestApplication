@@ -7,17 +7,6 @@
     tools:context=".presentation.tabs.dashboard.DashBoardFragment"
     android:orientation="vertical">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolBar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/toolbar_height"
-        android:background="@color/blue"
-        android:layout_marginBottom="10dp"
-        android:layout_gravity="top"
-        app:menu="@menu/toolbar" />
-
-    <include layout="@layout/part_result"/>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMoviesList"
         android:layout_width="wrap_content"

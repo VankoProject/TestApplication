@@ -12,9 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:fontFamily="@font/helvetica_neue_cyr_medium"
+        android:fontFamily="@font/roboto_medium"
         android:text="Welcome to Movies library"
-        android:textColor="@color/blue"
+        android:textColor="@color/lightBlue900"
         android:textSize="24sp" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -76,7 +76,8 @@
         android:layout_width="328dp"
         android:layout_height="50dp"
         android:layout_marginTop="18dp"
-        android:fontFamily="@font/helvetica_neue_cyr_medium"
+        android:fontFamily="@font/roboto_medium"
+        android:backgroundTint="@color/lightBlue900"
         android:text="@string/sign_in" />
 
     <TextView
@@ -94,8 +95,8 @@
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
         android:backgroundTint="@color/white"
-        android:fontFamily="@font/helvetica_neue_cyr_medium"
+        android:fontFamily="@font/roboto_medium"
         android:text="@string/create_account"
-        android:textColor="@color/dark_gray" />
+        android:textColor="@color/lightBlue900" />
 
 </LinearLayout>

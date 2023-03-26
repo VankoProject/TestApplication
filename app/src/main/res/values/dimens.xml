@@ -2,4 +2,5 @@
 <resources>
     <dimen name="toolbar_height">60dp</dimen>
     <dimen name="main_size_text_title_detail">24sp</dimen>
+    <dimen name="title_splash_tex_size">45sp</dimen>
 </resources>

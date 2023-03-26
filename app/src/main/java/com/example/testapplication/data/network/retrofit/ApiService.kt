@@ -1,6 +1,5 @@
 package com.example.testapplication.data.network.retrofit
 
-import androidx.lifecycle.LiveData
 import com.example.testapplication.data.network.model.MovieListDto
 import retrofit2.Response
 import retrofit2.http.GET
