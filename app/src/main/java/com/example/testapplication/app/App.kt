@@ -11,6 +11,7 @@ import org.koin.core.logger.Level
 
 class App: Application() {
 
+val context = this
     override fun onCreate() {
         super.onCreate()
 

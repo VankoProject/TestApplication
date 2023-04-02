@@ -63,7 +63,6 @@ class MovieRepositoryImpl(
                 page++
             } catch (_: Exception) {
             }
-//            delay(2000)
         }
     }
 

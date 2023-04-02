@@ -15,5 +15,6 @@
     <color name="colorOnError">#ba1a1a</color>
     <color name="orange">#FBB500</color>
     <color name="yellow">#FFEB3B</color>
+    <color name="lightGrey">#646464</color>
 
 </resources>

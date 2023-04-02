@@ -41,8 +41,7 @@
         tools:layout="@layout/fragment_registration">
         <argument
             android:name="emailArgs"
-            app:argType="string"
-            app:nullable="true" />
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/signInFragment"

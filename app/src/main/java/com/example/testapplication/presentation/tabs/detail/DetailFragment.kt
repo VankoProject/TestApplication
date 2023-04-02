@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -31,13 +30,10 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
     ): View {
         _binding = FragmentDetailBinding.inflate(layoutInflater, container, false)
 
-        toolbar = binding.toolbar
-//        with((activity as AppCompatActivity)) {
-//            setSupportActionBar(toolbar)
-//        }
-
-        toolbar.setNavigationOnClickListener {
-            findNavController().popBackStack()
+        toolbar = binding.toolbar.apply {
+            setNavigationOnClickListener {
+                findNavController().popBackStack()
+            }
         }
 
         viewModel.getDetailInfoMovie(args.movieId).observe(viewLifecycleOwner) {

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".presentation.auth.SignInFragment">
@@ -13,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:fontFamily="@font/roboto_medium"
-        android:text="Welcome to Movies library"
+        android:text="@string/title_sign_in_fragment"
         android:textColor="@color/lightBlue900"
         android:textSize="24sp" />
 
@@ -21,7 +22,8 @@
         android:id="@+id/tilEmail"
         android:layout_width="328dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp">
+        android:layout_marginTop="4dp"
+        app:startIconDrawable="@drawable/ic_email">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etEmail"
@@ -36,6 +38,8 @@
         android:id="@+id/tilPassword"
         android:layout_width="328dp"
         android:layout_height="wrap_content"
+        app:startIconDrawable="@drawable/ic_lock"
+        app:passwordToggleEnabled="true"
         android:layout_marginTop="4dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -44,32 +48,9 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:hint="@string/password_registration"
-            android:inputType="numberPassword" />
+            android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <LinearLayout
-        android:id="@+id/llRegistration"
-        android:layout_width="328dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/tvRememberPassword"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="start"
-            android:text="@string/remember_password" />
-
-        <Switch
-            android:id="@+id/switchSavePassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity=""
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-    </LinearLayout>
 
     <Button
         android:id="@+id/btnLogin"
@@ -94,6 +75,8 @@
         android:layout_width="328dp"
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
+        android:elevation="8dp"
+        android:shadowColor="@color/lightBlue900"
         android:backgroundTint="@color/white"
         android:fontFamily="@font/roboto_medium"
         android:text="@string/create_account"

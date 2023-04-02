@@ -1,8 +1,8 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.TestApplication" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/whiteGrey</item>
+        <item name="colorPrimary">@color/lightGrey</item>
         <item name="colorPrimaryVariant">@color/lightBlue900</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
