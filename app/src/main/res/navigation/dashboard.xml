@@ -8,15 +8,24 @@
     <fragment
         android:id="@+id/dashBoardFragment"
         android:name="com.example.testapplication.presentation.tabs.dashboard.DashBoardFragment"
-        android:label="fragment_dash_board"
-        tools:layout="@layout/fragment_dash_board" >
+        android:label="Popular movies"
+        tools:layout="@layout/fragment_dash_board">
         <action
             android:id="@+id/action_dashBoardFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/dashBoardFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.testapplication.presentation.tabs.detail.DetailFragment"
-        android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        android:label="Detail Info"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="movieId"
+            app:argType="integer" />
+    </fragment>
 </navigation>

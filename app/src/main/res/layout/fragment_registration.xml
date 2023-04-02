@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,23 +13,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:fontFamily="@font/helvetica_neue_cyr_bold"
+        android:fontFamily="@font/roboto_medium"
         android:text="@string/registration"
-        android:textColor="@color/blue"
+        android:textColor="@color/lightBlue900"
         android:textSize="24sp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilEmail"
         android:layout_width="328dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp">
+        android:layout_marginTop="4dp"
+        android:textColor="@color/lightBlue900"
+        app:startIconDrawable="@drawable/ic_email">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:textColor="@color/lightBlue900"
             android:hint="@string/email"
+            android:backgroundTint="@color/white"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -36,30 +40,36 @@
         android:id="@+id/tilPassword"
         android:layout_width="328dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp">
+        android:layout_marginTop="4dp"
+        app:passwordToggleEnabled="true"
+        app:startIconDrawable="@drawable/ic_lock">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:textColor="@color/lightBlue900"
             android:hint="@string/password"
-            android:inputType="numberPassword" />
+            android:backgroundTint="@color/white"
+            android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilPasswordRepeat"
         android:layout_width="328dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp">
+        android:layout_marginTop="4dp"
+        app:passwordToggleEnabled="true"
+        app:startIconDrawable="@drawable/ic_lock">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etPasswordRepeat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:textColor="@color/lightBlue900"
+            android:backgroundTint="@color/white"
             android:hint="@string/repeat_password"
-            android:inputType="numberPassword" />
+            android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -68,7 +78,8 @@
         android:layout_width="328dp"
         android:layout_height="50dp"
         android:layout_marginTop="18dp"
-        android:fontFamily="@font/helvetica_neue_cyr_medium"
+        android:backgroundTint="@color/lightBlue900"
+        android:fontFamily="@font/roboto_medium"
         android:text="@string/create_account" />
 
 

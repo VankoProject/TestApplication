@@ -17,4 +17,9 @@
     <string name="password_registration">Password</string>
     <string name="error_message">Error! Please try again later</string>
     <string name="try_again_button">Try Again</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Search film</string>
+    <string name="title_sign_in_fragment">Welcome to Movies library</string>
+    <string name="image_of_the_film">Image of the film</string>
+    <string name="send_message">Send message</string>
 </resources>

@@ -1,6 +1,5 @@
 package com.example.testapplication.presentation.tabs.adapters.mainadapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,12 +9,13 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.testapplication.R
 import com.example.testapplication.databinding.MovieItemBinding
 import com.example.testapplication.domain.MovieItem
+import com.example.testapplication.presentation.setUpRating
 
 interface Listener {
 
     fun onMovieClick(movieItem: MovieItem)
 
-    fun onIconClick(movieItem: MovieItem)
+    fun onIconClick(isFavorite: Boolean ,movieItem: MovieItem)
 }
 
 class MainAdapter(
@@ -26,7 +26,7 @@ class MainAdapter(
         val movieInfo = p0?.tag as MovieItem
         when (p0.id) {
             R.id.ivPoster -> listener.onMovieClick(movieInfo)
-            R.id.ivAddToDb -> listener.onIconClick(movieInfo)
+            R.id.ivAddToDb -> listener.onIconClick(movieInfo.isFavorite,movieInfo)
         }
     }
 
@@ -51,9 +51,13 @@ class MainAdapter(
 
         with(holder.binding) {
             tvTitle.text = item.title
-            tvReleaseDate.text = item.releaseDate
-            ratingBar.rating = item.voteAverage.toFloat()
-
+            tvScore.text = item.voteAverage.toString()
+            ratingBar.rating = setUpRating(item.voteAverage.toFloat())
+            if (item.isFavorite) {
+                ivAddToDb.setImageResource(R.drawable.ic_bookmark_full)
+            } else {
+                ivAddToDb.setImageResource(R.drawable.ic_bookmark_empty)
+            }
             Glide.with(holder.binding.root.context)
                 .load(URL_POSTER + item.posterPath)
                 .skipMemoryCache(true)
@@ -66,4 +70,6 @@ class MainAdapter(
     companion object {
         private const val URL_POSTER = "https://image.tmdb.org/t/p/w500"
     }
+
+
 }

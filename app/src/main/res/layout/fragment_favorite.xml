@@ -7,28 +7,6 @@
     android:orientation="vertical"
     tools:context=".presentation.tabs.favorite.FavoriteFragment">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolBar"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_gravity="top"
-        android:layout_marginBottom="10dp"
-        android:background="@color/blue"
-        app:menu="@menu/toolbar">
-
-        <EditText
-            android:layout_width="280dp"
-            android:layout_height="38dp"
-            android:layout_gravity="center"
-            android:hint="@string/search_film"
-            android:inputType="text"
-            android:paddingHorizontal="12dp"
-            android:textSize="16sp" />
-
-    </com.google.android.material.appbar.MaterialToolbar>
-
-    <include layout="@layout/part_result"/>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvFavorite"
         android:layout_width="match_parent"

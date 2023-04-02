@@ -6,13 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".presentation.tabs.TabsFragment">
 
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/tabsFragmentContainer"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/blue"
         app:defaultNavHost="true"
+        android:background="@color/lightBlue800"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -23,6 +24,7 @@
         android:id="@+id/bottomNavMenu"
         android:layout_width="match_parent"
         android:layout_height="56dp"
+        android:background="@color/lightBlue900"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -8,17 +8,21 @@
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.example.testapplication.presentation.tabs.favorite.FavoriteFragment"
-        android:label="fragment_favorite"
-        tools:layout="@layout/fragment_favorite" >
+        android:label="My favorite list"
+        tools:layout="@layout/fragment_favorite">
         <action
             android:id="@+id/action_favoriteFragment_to_detailFragment2"
-            app:destination="@id/detailFragment2" />
+            app:destination="@id/detailFragment2"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment2"
         android:name="com.example.testapplication.presentation.tabs.detail.DetailFragment"
-        android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" >
+        android:label="Detail info"
+        tools:layout="@layout/fragment_detail">
         <argument
             android:name="movieId"
             app:argType="integer" />

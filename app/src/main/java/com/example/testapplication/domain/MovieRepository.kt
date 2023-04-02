@@ -8,10 +8,14 @@ interface MovieRepository {
 
     suspend fun getDetailMovieInfo(movieId: Int): MovieItem
 
-    suspend fun getPopularMovies(): List<MovieItem>
+    fun getPopularMovies(): LiveData<List<MovieItem>>
 
     suspend fun saveMovie(movieItem: MovieItem)
 
     suspend fun deleteMovie(movieItem: MovieItem)
+
+    suspend fun loadDataToDb()
+
+    suspend fun searchMovie(title: String): MovieItem
 
 }
