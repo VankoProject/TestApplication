@@ -1,7 +1,7 @@
 package com.example.testapplication.presentation.tabs.adapters.mainadapter
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.testapplication.domain.MovieItem
+import com.example.domain.domain.MovieItem
 
 object MainDiffCallBack: DiffUtil.ItemCallback<MovieItem>() {
 

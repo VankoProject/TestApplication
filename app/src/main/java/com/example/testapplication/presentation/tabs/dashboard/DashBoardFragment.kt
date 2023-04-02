@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.domain.domain.MovieItem
 import com.example.testapplication.R
 import com.example.testapplication.databinding.FragmentDashBoardBinding
-import com.example.testapplication.domain.MovieItem
 import com.example.testapplication.presentation.tabs.adapters.mainadapter.Listener
 import com.example.testapplication.presentation.tabs.adapters.mainadapter.MainAdapter
 import kotlinx.coroutines.launch
