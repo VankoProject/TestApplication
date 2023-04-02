@@ -1,7 +1,8 @@
 package com.example.testapplication.presentation.tabs.adapters.favoriteadapter
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.testapplication.domain.MovieItem
+import com.example.domain.domain.MovieItem
+
 
 object FavDiffCallBack: DiffUtil.ItemCallback<MovieItem>() {
 

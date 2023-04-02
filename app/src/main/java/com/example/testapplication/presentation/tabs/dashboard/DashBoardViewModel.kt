@@ -2,11 +2,11 @@ package com.example.testapplication.presentation.tabs.dashboard
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.testapplication.domain.MovieItem
-import com.example.testapplication.domain.usecases.DeleteMovieItemUseCase
-import com.example.testapplication.domain.usecases.GetPopularMoviesUsesCase
-import com.example.testapplication.domain.usecases.LoadDataUseCase
-import com.example.testapplication.domain.usecases.SaveMovieItemUseCase
+import com.example.domain.domain.MovieItem
+import com.example.domain.domain.usecases.DeleteMovieItemUseCase
+import com.example.domain.domain.usecases.GetPopularMoviesUsesCase
+import com.example.domain.domain.usecases.LoadDataUseCase
+import com.example.domain.domain.usecases.SaveMovieItemUseCase
 import kotlinx.coroutines.launch
 
 class DashBoardViewModel(

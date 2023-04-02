@@ -1,15 +1,14 @@
 package com.example.testapplication.presentation.tabs.adapters.favoriteadapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.example.domain.domain.MovieItem
 import com.example.testapplication.R
 import com.example.testapplication.databinding.MovieItemDetailBinding
-import com.example.testapplication.domain.MovieItem
 import com.example.testapplication.presentation.setUpRating
 
 

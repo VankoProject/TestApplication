@@ -1,9 +1,9 @@
 package com.example.testapplication.app
 
 import android.app.Application
-import com.example.testapplication.data.di.dataModule
-import com.example.testapplication.domain.di.domainModule
-import com.example.testapplication.presentation.di.appModule
+import com.example.testapplication.di.appModule
+import com.example.testapplication.di.dataModule
+import com.example.testapplication.di.domainModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -18,7 +18,7 @@ val context = this
         startKoin {
             androidLogger(Level.ERROR)
             androidContext(this@App)
-            modules(appModule, domainModule, dataModule)
+            modules(listOf(appModule, domainModule, dataModule))
         }
     }
 
