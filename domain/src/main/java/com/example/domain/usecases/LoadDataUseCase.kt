@@ -1,6 +1,6 @@
-package com.example.domain.domain.usecases
+package com.example.domain.usecases
 
-import com.example.domain.domain.MovieRepository
+import com.example.domain.MovieRepository
 
 class LoadDataUseCase(private val repository: MovieRepository) {
 

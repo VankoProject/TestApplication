@@ -1,7 +1,6 @@
 package com.example.testapplication.data.network.model
 
 import com.google.gson.annotations.SerializedName
-import okhttp3.internal.threadName
 
 data class MovieItemDto(
 

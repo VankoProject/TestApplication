@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.domain.domain.MovieItem
+import com.example.domain.MovieItem
 import com.example.testapplication.R
 import com.example.testapplication.databinding.FragmentDashBoardBinding
 import com.example.testapplication.presentation.tabs.adapters.mainadapter.Listener
@@ -32,9 +32,9 @@ class DashBoardFragment : Fragment(R.layout.fragment_dash_board) {
             findNavController().navigate(direction)
         }
 
-        override fun onIconClick(isfavorite: Boolean, movieItem: MovieItem) {
+        override fun onIconClick(isFavorite: Boolean, movieItem: MovieItem) {
             lifecycleScope.launch {
-                if(!isfavorite){
+                if(!isFavorite){
                     viewModel.saveToFavoriteList(movieItem)
                 } else {
                     viewModel.deleteFavoriteFilm(movieItem)

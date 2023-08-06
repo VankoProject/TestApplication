@@ -1,4 +1,4 @@
-package com.example.domain.domain
+package com.example.domain
 
 import androidx.lifecycle.LiveData
 

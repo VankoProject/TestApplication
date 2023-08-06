@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -13,6 +14,9 @@ import com.example.testapplication.showToast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class RegistrationFragment : Fragment(R.layout.fragment_registration) {
 
@@ -30,23 +34,33 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
         binding.etEmail.setText(args.emailArgs).toString()
 
         binding.btnRegister.setOnClickListener {
-            val email = binding.etEmail.text.toString()
-            val password = binding.etPassword.text.toString()
-            if (checkAllFields()) {
-                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
-                    if (it.isSuccessful)
-                        showToast(
-                            requireContext(),
-                            "Account was successfully created"
-                        ).also {
-                            findNavController().navigateUp()  }
-                    else
-                        Log.e("error: ", it.exception.toString())
+            registerUser()
+        }
+    }
+
+    private fun registerUser() {
+        val email = binding.etEmail.text.toString()
+        val password = binding.etPassword.text.toString()
+        if (checkAllFields()) {
+            CoroutineScope(Dispatchers.IO).launch {
+                try {
+                    auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
+                        if (it.isSuccessful)
+                            showToast(
+                                requireContext(),
+                                "Account was successfully created"
+                            ).also {
+                                findNavController().navigateUp()
+                            }
+                        else
+                            Log.e("error: ", it.exception.toString())
+                    }
+                } catch (e: java.lang.Exception) {
+                    Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
                 }
             }
         }
     }
-
 
     private fun checkAllFields(): Boolean {
         with(binding) {

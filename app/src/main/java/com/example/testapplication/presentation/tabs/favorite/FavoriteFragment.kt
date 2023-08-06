@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.domain.domain.MovieItem
+import com.example.domain.MovieItem
 import com.example.testapplication.R
 import com.example.testapplication.databinding.FragmentFavoriteBinding
 import com.example.testapplication.presentation.tabs.adapters.favoriteadapter.FavAdapter
