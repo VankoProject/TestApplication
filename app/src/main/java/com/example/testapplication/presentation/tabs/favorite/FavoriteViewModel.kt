@@ -1,12 +1,12 @@
 package com.example.testapplication.presentation.tabs.favorite
 
 import androidx.lifecycle.ViewModel
-import com.example.domain.domain.MovieItem
-import com.example.domain.domain.usecases.DeleteMovieItemUseCase
-import com.example.domain.domain.usecases.GetFavoriteMoviesUseCase
+import com.example.domain.MovieItem
+import com.example.domain.usecases.DeleteMovieItemUseCase
+import com.example.domain.usecases.GetFavoriteMoviesUseCase
 
 class FavoriteViewModel(
-    private val getFavoriteMoviesUseCase: GetFavoriteMoviesUseCase,
+    getFavoriteMoviesUseCase: GetFavoriteMoviesUseCase,
     private val deleteMovieItemUseCase: DeleteMovieItemUseCase
 ): ViewModel() {
 

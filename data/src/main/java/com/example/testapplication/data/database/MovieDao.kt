@@ -18,7 +18,6 @@ interface MovieDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertMovieList (movieListDb: List<MovieDbModel>)
 
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun saveMovie(movieDbModel: MovieDbModel)
 

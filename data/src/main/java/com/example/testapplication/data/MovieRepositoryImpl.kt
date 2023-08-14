@@ -2,6 +2,8 @@ package com.example.testapplication.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
+import com.example.domain.MovieItem
+import com.example.domain.MovieRepository
 import com.example.testapplication.data.database.MovieDao
 import com.example.testapplication.data.mapper.changeMovieStatus
 import com.example.testapplication.data.mapper.dbModelToMovieItem
@@ -9,8 +11,6 @@ import com.example.testapplication.data.mapper.modelDtoToMovieDbModel
 import com.example.testapplication.data.mapper.movieItemToDbModel
 import com.example.testapplication.data.network.model.MovieListDto
 import com.example.testapplication.data.network.retrofit.ApiService
-import com.example.domain.domain.MovieItem
-import com.example.domain.domain.MovieRepository
 
 class MovieRepositoryImpl(
     private val apiService: ApiService,
@@ -60,7 +60,7 @@ class MovieRepositoryImpl(
                     it.modelDtoToMovieDbModel
                 }
                 movieDao.insertMovieList(movieListDb)
-                page++
+                ++page
             } catch (_: Exception) {
             }
         }

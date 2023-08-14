@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.example.domain.domain.MovieItem
+import com.example.domain.MovieItem
 import com.example.testapplication.R
 import com.example.testapplication.databinding.MovieItemBinding
 import com.example.testapplication.presentation.setUpRating

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginHorizontal="40dp"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".presentation.auth.RegistrationFragment">
@@ -20,7 +21,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilEmail"
-        android:layout_width="328dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:textColor="@color/lightBlue900"
@@ -38,8 +39,12 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilPassword"
-        android:layout_width="328dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:helperText="@string/countSymbolsPassword"
+        app:counterEnabled="true"
+        app:counterMaxLength="16"
+        app:helperTextTextColor="@android:color/holo_green_dark"
         android:layout_marginTop="4dp"
         app:passwordToggleEnabled="true"
         app:startIconDrawable="@drawable/ic_lock">
@@ -56,8 +61,12 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilPasswordRepeat"
-        android:layout_width="328dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:helperText="@string/countSymbolsPassword"
+        app:counterEnabled="true"
+        app:counterMaxLength="16"
+        app:helperTextTextColor="@android:color/holo_green_dark"
         android:layout_marginTop="4dp"
         app:passwordToggleEnabled="true"
         app:startIconDrawable="@drawable/ic_lock">

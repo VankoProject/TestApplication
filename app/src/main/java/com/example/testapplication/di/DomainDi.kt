@@ -1,6 +1,6 @@
 package com.example.testapplication.di
 
-import com.example.domain.domain.usecases.*
+import com.example.domain.usecases.*
 import org.koin.dsl.module
 
 val domainModule = module {

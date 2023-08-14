@@ -2,7 +2,8 @@ package com.example.testapplication.data.mapper
 
 import com.example.testapplication.data.database.MovieDbModel
 import com.example.testapplication.data.network.model.MovieItemDto
-import com.example.domain.domain.MovieItem
+import com.example.domain.MovieItem
+
 
 fun movieItemToDbModel(movieItem: MovieItem) = MovieDbModel(
     id = movieItem.id,
@@ -11,7 +12,7 @@ fun movieItemToDbModel(movieItem: MovieItem) = MovieDbModel(
     releaseDate = movieItem.releaseDate,
     title = movieItem.title,
     voteAverage = movieItem.voteAverage,
-    isFavorite = true
+    isFavorite = !movieItem.isFavorite
 )
 
 fun changeMovieStatus(movieItem: MovieItem) = MovieDbModel(
@@ -21,7 +22,7 @@ fun changeMovieStatus(movieItem: MovieItem) = MovieDbModel(
     releaseDate = movieItem.releaseDate,
     title = movieItem.title,
     voteAverage = movieItem.voteAverage,
-    isFavorite = false
+    isFavorite = !movieItem.isFavorite
 )
 
 

@@ -28,7 +28,7 @@ class SplashFragment: Fragment(R.layout.fragment_splash) {
                 .start()
             delay(2000)
 
-            findNavController().navigate(R.id.action_splashFragment_to_tabsFragment)
+            findNavController().navigate(R.id.action_splashFragment_to_signInFragment)
         }
     }
 }
