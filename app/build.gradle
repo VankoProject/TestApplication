@@ -16,6 +16,7 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -89,5 +90,8 @@ dependencies {
     implementation "io.insert-koin:koin-android:3.1.2"
     implementation "io.insert-koin:koin-core:3.1.2"
     testImplementation "io.insert-koin:koin-test:3.1.2"
+
+    //Lotti
+    implementation 'com.airbnb.android:lottie:6.1.0'
 
 }

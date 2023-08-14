@@ -1,21 +1,21 @@
 package com.example.testapplication.presentation.auth
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.testapplication.R
 import com.example.testapplication.databinding.FragmentSignInBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 
 class SignInFragment : Fragment(R.layout.fragment_sign_in) {
 
@@ -46,6 +46,25 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        val fadeIn = AnimationUtils.loadAnimation(context, R.anim.fade_in)
+        val bottomDown = AnimationUtils.loadAnimation(context, R.anim.bottom_down)
+
+        binding.topLinearLayout.animation = bottomDown
+
+        lifecycleScope.launch {
+            delay(1000)
+            with(binding) {
+                cardView.animation = fadeIn
+                tvTitle.animation = fadeIn
+                btnFacebook.animation = fadeIn
+                btnGoogle.animation = fadeIn
+                btnRegistration.animation = fadeIn
+            }
+        }
+    }
+
     private fun signInUser() {
         val email = binding.etEmail.text.toString()
         val password = binding.etPassword.text.toString()
@@ -53,10 +72,17 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
             CoroutineScope(Dispatchers.IO).launch {
                 try {
                     auth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
-                        if (it.isSuccessful)
+                        if (it.isSuccessful) {
+                            Log.d(TAG, "signInWithEmail: success")
                             findNavController().navigate(R.id.action_signInFragment_to_tabsFragment)
-                        else
+                        } else {
                             Log.e("error: ", it.exception.toString())
+                            Toast.makeText(
+                                requireContext(),
+                                "User is not registered. Please create account",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
                     }
                 } catch (e: Exception) {
                     withContext(Dispatchers.Main) {
